@@ -1,8 +1,9 @@
 body {
-  position: fixed;
+  position: absolute;
   top: 0;
   width: 100%;
   height: 100%;
+  overflow: auto;
   background-size: cover;
   background-image: url("images/sky2.jpg");
 }
@@ -36,4 +37,15 @@ h2 {
 
 .form-signin .form-control {
   padding: 10px;
+}
+
+@media screen and (max-width: 960px) {
+  
+}
+
+@media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 480px) {
+  
 }
