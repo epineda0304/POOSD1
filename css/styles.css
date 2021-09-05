@@ -8,6 +8,11 @@ body {
   background-image: url("../images/sky2.jpg");
 }
 
+h1 {
+  color: goldenrod;
+  text-shadow: 2px 1px #404040;
+}
+
 h2 {
   color: goldenrod;
   text-shadow: 1px 1px #404040;
@@ -27,8 +32,18 @@ h2 {
   border-radius: 13px;
 }
 
-.form-signin .form-signin-heading, .form-signin .checkbox {
-  margin-bottom: 30px;
+.form-register {
+  max-width: 45%;
+  margin: 0 auto;
+  background-color: aliceblue;
+  padding: 15px 40px 10px;
+  border: 1px solid #404040;
+  box-shadow: 2px 2px;
+  border-radius: 13px;
+}
+
+.form-signin .form-signin-heading, .form-signin .checkbox, .form-group, .form-control, .col{
+  margin-bottom: 20px;
 }
 
 .form-signin input[type="text"], .form-signin input[type="password"] {
@@ -38,4 +53,3 @@ h2 {
 .form-signin .form-control {
   padding: 10px;
 }
-
