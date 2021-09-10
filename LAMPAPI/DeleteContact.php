@@ -2,8 +2,7 @@
 
   $inData = getRequestInfo();
 
-  $userId = $inData["userId"];
-  $conactId = $inData["conactId"];
+  $conactId = $inData["ID"];
 
   $conn = new mysqli("localhost", "TheCoders", "WeLoveCOP4331", "contacts");
   if ($conn->connect_error)
@@ -12,14 +11,7 @@
   }
   else
   {
-    $sql = "SELECT FROM people WHERE First_name like ? and ID = ? ORDER BY First_name ASC";
-    $stmt = $conn->prepare($sql);
-    $id = "%" . $inData["ID"] . "%";
-
-    $sql = "DELETE FROM people where ID = " . $id;
-    if ($conn->query($sql) != TRUE) {
-      returnWithError( "No Contact Found" );
-
+    $sql = "DELETE FROM people WHERE ID = $conactId";
     $conn->close();
 		returnWithError("");
   }
