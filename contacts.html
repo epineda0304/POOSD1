@@ -13,8 +13,12 @@
 <body>
   <div class="wrapper">
     <form class="form-contacts">
-      <h1 class="form-signin-heading text-center" id="title">Contacts</h1><br>
-
+      <div class="titleBar">
+        <button type="button" id="logoutButton" class="btn btn-danger">Log out</button>
+        <h1 class="form-signin-heading text-center" id="title">Contacts </h1>
+      </div>
+      <br>
+      <!--Search bar-->
       <div class="container">
         <div class="row">
           <div class="col">
@@ -25,6 +29,8 @@
               </div>
             </div>
           </div>
+
+          <!--This is the add contact section-->
           <div class="col">
             <div class="addUser">
               <!-- Button trigger modal -->
@@ -74,7 +80,8 @@
           </div>
         </div>
       </div>
-      
+
+      <!--The table to display and edit contacts-->
       <table class="table table-hover">
         <thead>
           <tr>
