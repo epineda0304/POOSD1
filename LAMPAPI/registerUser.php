@@ -4,6 +4,8 @@
 
   $username = $inData["Username"];
   $password = $inData["Pwd"];
+  $firstName = $inData["FirstName"];
+  $lastName = $inData["LastName"];
 
   $conn = new mysqli("localhost", "TheCoders", "WeLoveCOP4331", "contacts");
   if ($conn->connect_error)
@@ -12,7 +14,7 @@
 	}
   else
   {
-    $sql = "SELECT Username FROM users WHERE Username=?";
+    $sql = "SELECT ID, FirstName, LastName FROM Users Where Login=?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $username);
     $stmt->execute();
@@ -25,13 +27,12 @@
     }
     else
     {
-      $sql = "INSERT INTO users (Username, Pwd) VALUES (?, ?)";
+      $sql = "INSERT into Users (Login,Password,FirstName,LastName) VALUES(?,?,?,?)";
       $stmt = $conn->prepare($sql);
-      $stmt->bind_param("ss", $username, $password);
+      $stmt->bind_param("ssss", $username,$password,$firstName,$lastName);
       $stmt->execute();
       returnWithError("");
     }
-
     $stmt->close();
     $conn->close();
   }
