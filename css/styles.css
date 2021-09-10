@@ -42,6 +42,16 @@ h2 {
   border-radius: 13px;
 }
 
+.form-contacts {
+  max-width: 80%;
+  margin: 0 auto;
+  background-color: aliceblue;
+  padding: 15px 40px 10px;
+  border: 1px solid #404040;
+  box-shadow: 2px 2px;
+  border-radius: 13px;
+}
+
 .form-signin .form-signin-heading, .form-signin .checkbox, .form-group, .form-control, .col{
   margin-bottom: 20px;
 }
@@ -52,4 +62,26 @@ h2 {
 
 .form-signin .form-control {
   padding: 10px;
+}
+
+.addUser{
+  margin-left: 70%;
+}
+
+.contactOptions {
+  margin-left: 50%;
+}
+
+.titleBar {
+  padding: 1%;
+  background-color: #2e2e2e;
+  border-radius: 10px;
+}
+
+#exampleModal{
+  margin-top: 15%;
+}
+
+#logoutButton {
+  float: right;
 }
