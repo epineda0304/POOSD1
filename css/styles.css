@@ -65,11 +65,11 @@ h2 {
 }
 
 .addUser{
-  margin-left: 70%;
+  float: right;
 }
 
 .contactOptions {
-  margin-left: 50%;
+  float: right;
 }
 
 .titleBar {
