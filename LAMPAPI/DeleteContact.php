@@ -11,9 +11,14 @@
   }
   else
   {
-    $sql = "DELETE FROM people WHERE ID = $conactId";
+    $sql = "DELETE FROM people WHERE ID = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $conactId);
+    $stmt->execute();
+    returnWithError("");
+
+    $stmt->close();
     $conn->close();
-		returnWithError("");
   }
 
   function getRequestInfo()
