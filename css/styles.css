@@ -40,6 +40,8 @@ h2 {
   border: 1px solid #404040;
   box-shadow: 2px 2px;
   border-radius: 13px;
+  position: relative; 
+  top: -25px;
 }
 
 .form-contacts {
