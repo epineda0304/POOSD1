@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script type="text/javascript" src=""js/code.js"></script>
   <link href="css/styles.css" rel="stylesheet">	
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
@@ -11,20 +12,17 @@
   <title>Hermes</title>
 </head>
 <body>
+  <!--Login form-->
   <div class="wrapper">
     <form class="form-signin">
       <img src="images/mail.svg" width="113%" height = "85" alt="pic" id="logo">
       <h2 class="form-signin-heading text-center">Hermes</h2>
       <input type="text" class="form-control" name="username" placeholder="Username" required="" autofocus="" />
       <input type="password" class="form-control" name="password" placeholder="Password" required="" />
-      <!-- <label class="checkbox">
-        <input type="checkbox" value="remember-me" id="rememberMe">
-        Remember Me
-      </label>
-      -->
       <p>Don't have an account? <a href="main.html" style="color:dodgerblue">Sign up today</a>
       <div class="d-grid gap-2">
-        <button class="btn btn-lg btn-primary">Login</button>
+        <button class="btn btn-lg btn-primary" onclick="doLogin();">Login</button>
+        <span id="loginResult"></span>
       </div>
     </form>
   </div>
