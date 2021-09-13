@@ -11,13 +11,13 @@ function doLogin()
 	firstName = "";
 	lastName = "";
 	
-	var login = document.getElementById("Username").value;
-	var password = document.getElementById("Pwd").value;
+	var login = document.getElementById("userName").value;
+	var password = document.getElementById("userPwd").value;
 //	var hash = md5( password );
 	
 	document.getElementById("loginResult").innerHTML = "";
 
-	var tmp = {login:login,password:password};
+	var tmp = {Username:login, Pwd:password};
 //	var tmp = {login:login,password:hash};
 	var jsonPayload = JSON.stringify( tmp );
 	
