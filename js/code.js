@@ -104,12 +104,12 @@ function registerUser()
 {
 	var firstName = document.getElementById("First_name").value;
 	var lastName = document.getElementById("Last_name").value;
-	var newUser = document.getElementById("Username").value;
-	var password = document.getElementById("Pwd").value;
+	var newUser = document.getElementById("userName").value;
+	var password = document.getElementById("userPwd").value;
 
 	document.getElementById("registerAddUser").innerHTML = "";
 
-	var tmp = {color:newColor,userId,userId};
+	var tmp = {FirstName:firstName, LastName:lastName, Username:newUser, Pwd:password};
 	var jsonPayload = JSON.stringify( tmp );
 
 	var url = urlBase + '/registerUser.' + extension;
