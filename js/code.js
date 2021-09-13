@@ -171,12 +171,12 @@ function addContact()
 
 function searchContact()
 {
-	var srch = document.getElementById("searchText").value;
+	var srch = document.getElementById("searchContacts").value;
 	document.getElementById("contactSearchResult").innerHTML = "";
 	
 	var contactList = "";
 
-	var tmp = {search:srch,userId:userId};
+	var tmp = {search:srch, User_ID: userId};
 	var jsonPayload = JSON.stringify( tmp );
 
 	var url = urlBase + '/searchContacts.' + extension;
