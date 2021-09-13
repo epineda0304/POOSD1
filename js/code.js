@@ -137,14 +137,14 @@ function registerUser()
 
 function addContact()
 {
-	var newColor = document.getElementById("First_name").value;
-	var newColor = document.getElementById("Last_name").value;
-	var newColor = document.getElementById("email").value;
-	var newColor = document.getElementById("Phone_num").value;
+	var first = document.getElementById("firstName").value;
+	var last = document.getElementById("lastName").value;
+	var em = document.getElementById("contactEmail").value;
+	var ph = document.getElementById("contactPhone").value;
 
 	document.getElementById("contactAddResult").innerHTML = "";
 
-	var tmp = {color:newColor,userId,userId};
+	var tmp = {First_name:first, User_ID:userId, Last_name:last, email :em, Phone_num: ph};
 	var jsonPayload = JSON.stringify( tmp );
 
 	var url = urlBase + '/AddContact.' + extension;
