@@ -1,4 +1,4 @@
-var urlBase = 'http://small-hermes.xyz/LAMPAPI';
+var urlBase = 'http://COP4331-5.com/LAMPAPI';
 var extension = 'php';
 
 var userId = 0;
@@ -17,7 +17,7 @@ function doLogin()
 	
 	document.getElementById("loginResult").innerHTML = "";
 
-	var tmp = {Username:login,Pwd:password};
+	var tmp = {login:login,password:password};
 //	var tmp = {login:login,password:hash};
 	var jsonPayload = JSON.stringify( tmp );
 	
