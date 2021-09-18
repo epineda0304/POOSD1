@@ -28,7 +28,12 @@
 				$searchResults .= ",";
 			}
 			$searchCount++;
-			$searchResults .= '"' . $row["ID"] . $row["First_name"] . $row["Last_name"] . $row["Phone_num"] .	$row["email"] . $row["User_ID"] . '"';
+			$searchResults .= '"' . 'ID: ' . $row["ID"] .
+															' | First Name: ' . $row["First_name"] .
+															' | Last Name: ' . $row["Last_name"] .
+															' | Phone Number: ' . $row["Phone_num"] .
+															' | Email: ' .	$row["email"] .
+															' | Associated User ID: ' . $row["User_ID"] . '"';
 
 			#$tojson = array("ID"=>$row["ID"],
 			#							"First_name"=>$row["FirstName"],
