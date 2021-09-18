@@ -201,13 +201,28 @@ function searchContact()
 				document.getElementById("contactSearchResult").innerHTML = "Contact(s) has been retrieved";
 				var jsonObject = JSON.parse( xhr.responseText );
 				
-				for( var i=0; i<jsonObject.results.length; i++ )
+				if(jsonObject.results.length > 0)
 				{
-					contactList += jsonObject.results[i];
-					if( i < jsonObject.results.length - 1 )
+					for( var i=0; i<jsonObject.results.length; i++ )
 					{
-						contactList += "<br />\r\n";
+						contactList += '<tr>';
+						contactList += '<td>' + jsonObject.results[i].ID + '</td>';
+						contactList += '<td>' + jsonObject.results[i].First_name + '</td>';
+						contactList += '<td>' + jsonObject.results[i].Last_name + '</td>';
+						contactList += '<td>' + jsonObject.results[i].Phone_num + '</td>';
+						contactList += '<td>' + jsonObject.results[i].email + '</td>';
+						
+						//contactList += jsonObject.results[i];
+						//if( i < jsonObject.results.length - 1 )
+						//{
+						//	contactList += "<br />\r\n";
+						//}
+						contactList += '</tr>';
 					}
+				}
+				else
+				{
+					contactList += '<tr><td colspan="3" class="text-center"> No Data Found </td></tr>';
 				}
 				
 				document.getElementsByTagName("p")[0].innerHTML = contactList;
