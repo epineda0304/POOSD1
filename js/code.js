@@ -205,24 +205,24 @@ function searchContact()
 				{
 					for( var i=0; i<jsonObject.results.length; i++ )
 					{
-						contactList += '<tr>';
-						contactList += '<td>' + jsonObject.results[i].ID + '</td>';
-						contactList += '<td>' + jsonObject.results[i].First_name + '</td>';
-						contactList += '<td>' + jsonObject.results[i].Last_name + '</td>';
-						contactList += '<td>' + jsonObject.results[i].Phone_num + '</td>';
-						contactList += '<td>' + jsonObject.results[i].email + '</td>';
+						//contactList += '<tr>';
+						contactList += '<p>' + jsonObject.results[i].ID + '</p>';
+						contactList += '<p>' + jsonObject.results[i].First_name + '</p>';
+						contactList += '<p>' + jsonObject.results[i].Last_name + '</p>';
+						contactList += '<p>' + jsonObject.results[i].Phone_num + '</p>';
+						contactList += '<p>' + jsonObject.results[i].email + '</p>';
 						
 						//contactList += jsonObject.results[i];
 						//if( i < jsonObject.results.length - 1 )
 						//{
 						//	contactList += "<br />\r\n";
 						//}
-						contactList += '</tr>';
+						//contactList += '</tr>';
 					}
 				}
 				else
 				{
-					contactList += '<tr><td colspan="3" class="text-center"> No Data Found </td></tr>';
+					contactList += 'p class="text-center"> No Data Found </p>';
 				}
 				
 				document.getElementsByTagName("p")[0].innerHTML = contactList;
