@@ -208,7 +208,6 @@ function searchContact()
 					for( var i=0; i<jsonObject.results.length; i++ )
 					{
 						contactList += '<tr>';
-						contactList += '<td>' + jsonObject.results[i].ID + '</td>';
 						contactList += '<td>' + jsonObject.results[i].First_name + '</td>';
 						contactList += '<td>' + jsonObject.results[i].Last_name + '</td>';
 						contactList += '<td>' + jsonObject.results[i].Phone_num + '</td>';
