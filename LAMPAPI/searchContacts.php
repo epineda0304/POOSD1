@@ -29,11 +29,11 @@
 			}
 			$searchCount++;
 			$searchResults .= '"' . 'ID: ' . $row["ID"] .
-															' | First Name: ' . $row["First_name"] .
-															' | Last Name: ' . $row["Last_name"] .
-															' | Phone Number: ' . $row["Phone_num"] .
-															' | Email: ' .	$row["email"] .
-															' | Associated User ID: ' . $row["User_ID"] . '"';
+															' | First_name: ' . $row["First_name"] .
+															' | Last_name: ' . $row["Last_name"] .
+															' | Phone_num: ' . $row["Phone_num"] .
+															' | email: ' .	$row["email"] .
+															' | User_ID: ' . $row["User_ID"] . '"';
 
 			#$tojson = array("ID"=>$row["ID"],
 			#							"First_name"=>$row["FirstName"],
