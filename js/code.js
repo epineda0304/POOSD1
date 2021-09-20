@@ -207,19 +207,25 @@ function searchContact()
 				{
 					for( var i=0; i<jsonObject.results.length; i++ )
 					{
-						//contactList += '<tr>';
-						contactList += '<p>' + jsonObject.results[i].ID + '</p>';
-						contactList += '<p>' + jsonObject.results[i].First_name + '</p>';
-						contactList += '<p>' + jsonObject.results[i].Last_name + '</p>';
-						contactList += '<p>' + jsonObject.results[i].Phone_num + '</p>';
-						contactList += '<p>' + jsonObject.results[i].email + '</p>';
+						contactList += '<tr>';
+						contactList += '<td>' + jsonObject.results[i].ID + '</td>';
+						contactList += '<td>' + jsonObject.results[i].First_name + '</td>';
+						contactList += '<td>' + jsonObject.results[i].Last_name + '</td>';
+						contactList += '<td>' + jsonObject.results[i].Phone_num + '</td>';
+						contactList += '<td>' + jsonObject.results[i].email + '</td>';
 						
 						//contactList += jsonObject.results[i];
 						//if( i < jsonObject.results.length - 1 )
 						//{
 						//	contactList += "<br />\r\n";
 						//}
-						//contactList += '</tr>';
+						contactList += '<td>';
+						contactList += '<div class="contactOptions">';
+						contactList +='<button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button>';
+						contactList +='<button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>';
+						contactList += '</div>';
+						contactList += '</td>';
+						contactList += '</tr>';
 					}
 				}
 				else
@@ -227,7 +233,7 @@ function searchContact()
 					contactList += 'p class="text-center"> No Data Found </p>';
 				}
 				
-				document.getElementsByTagName("p")[0].innerHTML = contactList;
+				document.getElementsByTagName("tbody")[0].innerHTML = contactList;
 			}
 		};
 		xhr.send(jsonPayload);
