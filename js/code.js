@@ -145,6 +145,7 @@ function registerUser()
 
 function addContact()
 {
+	readCookie();
 	var first = document.getElementById("firstName").value;
 	var last = document.getElementById("lastName").value;
 	var em = document.getElementById("contactEmail").value;
@@ -179,6 +180,7 @@ function addContact()
 
 function searchContact()
 {
+	readCookie();
 	var srch = document.getElementById("searchContacts").value;
 	document.getElementById("contactSearchResult").innerHTML = "";
 	
