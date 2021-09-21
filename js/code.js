@@ -244,6 +244,44 @@ function searchContact()
 	
 }
 
+
+function EditContact()
+{	
+	readCookie();
+
+	var fName = document.getElementById("editFirst").value;
+	var lName = document.getElementById("editLast").value;
+	var uEmail = document.getElementById("editEmail").value;
+	var uPhone = document.getElementById("editPhoneNumber").value;
+
+	document.getElementById("contactEditResult").innerHTML = "";
+
+	var tmp = {First_name:fName, Last_name:lName , email:uEmail, Phone_num:uPhone, ID:userId};
+	var jsonPayload = JSON.stringify( tmp );
+
+	var url = '/EditContact.php';
+	
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	try
+	{
+		xhr.onreadystatechange = function() 
+		{
+			if (this.readyState == 4 && this.status == 200) 
+			{
+				document.getElementById("contactEditResult").innerHTML = "Contact has been edited.";
+			}
+		};
+		xhr.send(jsonPayload);
+	}
+	catch(err)
+	{
+		document.getElementById("contactEditResult").innerHTML = "Could not edit contact.";
+	}
+	
+}
+
 // This function cant be used yet
 function deleteContact()
 {	
