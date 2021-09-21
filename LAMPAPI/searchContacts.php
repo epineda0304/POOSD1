@@ -28,21 +28,21 @@
 				$searchResults .= ",";
 			}
 			$searchCount++;
-			$searchResults .= '"' . 'ID: ' . $row["ID"] .
-															' | First_name: ' . $row["First_name"] .
-															' | Last_name: ' . $row["Last_name"] .
-															' | Phone_num: ' . $row["Phone_num"] .
-															' | email: ' .	$row["email"] .
-															' | User_ID: ' . $row["User_ID"] . '"';
+			#$searchResults .= '"' . 'ID: ' . $row["ID"] .
+			#												' | First Name: ' . $row["First_name"] .
+			#												' | Last Name: ' . $row["Last_name"] .
+			#												' | Phone Number: ' . $row["Phone_num"] .
+			#												' | Email: ' .	$row["email"] .
+			#												' | Associated User ID: ' . $row["User_ID"] . '"';
 
-			#$tojson = array("ID"=>$row["ID"],
-			#							"First_name"=>$row["FirstName"],
-			#							"Last_name"=>$row["LastName"],
-			#							"Email"=>$row["email"]
-			#							"Phone_num"=>$row["PhoneNumber"],
-			#							"User_ID"=>$row["UserID"]);
+			$tojson = array("ID"=>$row["ID"],
+										"First_name"=>$row["First_name"],
+										"Last_name"=>$row["Last_name"],
+										"Email"=>$row["email"],
+										"Phone_num"=>$row["Phone_num"],
+										"User_ID"=>$row["User_ID"]);
 
-			#$searchResults .= json_encode($tojson);
+			$searchResults .= json_encode($tojson);
 		}
 
 		if( $searchCount == 0 )
