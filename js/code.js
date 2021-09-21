@@ -220,7 +220,7 @@ function searchContact()
 						//}
 						contactList += '<td>';
 						contactList += '<div class="contactOptions">';
-						contactList +='<button type="button" class="btn btn-success"><i class="fas fa-edit"></i></button>';
+						contactList +='<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#editorModal"><i class="fas fa-edit"></i> </button>';
 						contactList +='<button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>';
 						contactList += '</div>';
 						contactList += '</td>';
