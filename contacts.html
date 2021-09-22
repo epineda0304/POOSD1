@@ -40,7 +40,7 @@
             <div class="input-group mb-3">
               <input type="text" class="form-control" id="searchContacts" placeholder="Search" aria-label="Recipient's username" aria-describedby="basic-addon2">
               <div class="input-group-append">
-                <button class="btn btn-primary" type="button" onclick="searchContact();"><i class="fas fa-search"></i></button>
+                <button class="btn btn-primary" type="button" onclick="mySearchFunction();"><i class="fas fa-search"></i></button>
                 <span id="contactSearchResult"></span>
               </div>
             </div>
@@ -52,7 +52,8 @@
               <!-- Button trigger modal -->
               <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 <i class="fas fa-plus"></i> Add New Contact</i></button>
-              </button>
+             <button type="button" onclick="searchContact();" class="btn btn-primary"> Show Contact(s) </button>
+            
 
               <!-- Modal -->
               <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
