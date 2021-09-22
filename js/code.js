@@ -214,14 +214,9 @@ function searchContact()
 						contactList += '<tr>';
 						contactList += '<td>' + jsonObject.results[i].First_name + '</td>';
 						contactList += '<td>' + jsonObject.results[i].Last_name + '</td>';
+						contactList += '<td>' + jsonObject.results[i].Email + '</td>';
 						contactList += '<td>' + jsonObject.results[i].Phone_num + '</td>';
-						contactList += '<td>' + jsonObject.results[i].email + '</td>';
 						
-						//contactList += jsonObject.results[i];
-						//if( i < jsonObject.results.length - 1 )
-						//{
-						//	contactList += "<br />\r\n";
-						//}
 						contactList += '<td>';
 						contactList += '<div class="contactOptions">';
 						contactList +='<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#editorModal"><i class="fas fa-edit"></i></button>';
