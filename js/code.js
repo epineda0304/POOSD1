@@ -263,7 +263,7 @@ function editContact()
 	var tmp = {First_name:fName, Last_name:lName , email:uEmail, Phone_num:uPhone, ID:userId};
 	var jsonPayload = JSON.stringify( tmp );
 
-	var url = '/EditContact.php';
+	var url = urlBase + '/EditContact.' + extension;
 	
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
@@ -296,7 +296,7 @@ function deleteContact()
 
  	 document.getElementById("deleteContact").innerHTML = "";
 
-	var url = '/DeleteContact.php';
+	var url = urlBase + '/DeleteContact.' + extension;
 	
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
@@ -307,6 +307,7 @@ function deleteContact()
 		{
 			if (this.readyState == 4 && this.status == 200) 
 			{
+				// This id does not exit yet
 				document.getElementById("deleteContactResult").innerHTML = "Contact deleted!";
 			}
 		};
