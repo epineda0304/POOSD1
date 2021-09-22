@@ -223,7 +223,7 @@ function searchContact()
 						saveCookie();
 						
 						contactList += '<tr>';
-						contactList += '<td>' + <input type="text"/> +jsonObject.results[i].First_name + '</td>';
+						contactList += '<td>' +jsonObject.results[i].First_name + '</td>';
 						contactList += '<td>' + jsonObject.results[i].Last_name + '</td>';
 						contactList += '<td>' + jsonObject.results[i].Email + '</td>';
 						contactList += '<td>' + jsonObject.results[i].Phone_num + '</td>';
