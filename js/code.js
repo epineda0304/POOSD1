@@ -64,7 +64,8 @@ function saveCookie()
 	var minutes = 20;
 	var date = new Date();
 	date.setTime(date.getTime()+(minutes*60*1000));	
-	document.cookie = "firstName=" + firstName + ",lastName=" + lastName + ",userId=" + userId + ";expires=" + date.toGMTString();
+	// Putting here
+	document.cookie = "firstName=" + firstName + ",lastName=" + lastName + ",userId=" + userId + ",id=" + id + ";expires=" + date.toGMTString();
 }
 
 function readCookie()
@@ -87,6 +88,11 @@ function readCookie()
 		else if( tokens[0] == "userId" )
 		{
 			userId = parseInt( tokens[1].trim() );
+		}
+		// Putting here
+		else if( tokens[0] == "id" )
+		{
+			id = parseInt( tokens[1].trim() );
 		}
 	}
 	
@@ -213,6 +219,8 @@ function searchContact()
 					for( var i=0; i<jsonObject.results.length; i++ )
 					{
 						id = jsonObject.results[i].ID;
+						// Putting here
+						saveCookie();
 						
 						contactList += '<tr>';
 						contactList += '<td>' + jsonObject.results[i].First_name + '</td>';
@@ -258,7 +266,7 @@ function editContact()
 
 	document.getElementById("contactEditResult").innerHTML = "";
 
-	var tmp = {First_name:fName, Last_name:lName , email:uEmail, Phone_num:uPhone, ID:userId};
+	var tmp = {First_name:fName, Last_name:lName , email:uEmail, Phone_num:uPhone, ID:id};
 	var jsonPayload = JSON.stringify( tmp );
 
 	var url = urlBase + '/EditContact.' + extension;
