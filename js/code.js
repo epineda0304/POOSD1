@@ -203,7 +203,11 @@ function searchContact()
 				document.getElementById("contactSearchResult").innerHTML = "Contact(s) has been retrieved";
 				var jsonObject = JSON.parse( xhr.responseText );
 				
-				if(jsonObject.results.length > 0)
+				if(jsonObject.id == 0)
+				{
+					contactList += '<p class="text-center"> No Records Found </p>';
+				}	
+				else if(jsonObject.results.length > 0)
 				{
 					for( var i=0; i<jsonObject.results.length; i++ )
 					{
@@ -229,7 +233,7 @@ function searchContact()
 				}
 				else
 				{
-					contactList += 'p class="text-center"> No Data Found </p>';
+					contactList += '<p class="text-center"> No Data Found </p>';
 				}
 				
 				document.getElementsByTagName("tbody")[0].innerHTML = contactList;
