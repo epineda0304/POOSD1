@@ -2,6 +2,7 @@ var urlBase = 'http://small-hermes.xyz/LAMPAPI';
 var extension = 'php';
 
 var userId = 0;
+var id = 0;
 var firstName = "";
 var lastName = "";
 
@@ -211,6 +212,8 @@ function searchContact()
 				{
 					for( var i=0; i<jsonObject.results.length; i++ )
 					{
+						id = jsonObject.results[i].ID;
+						
 						contactList += '<tr>';
 						contactList += '<td>' + jsonObject.results[i].First_name + '</td>';
 						contactList += '<td>' + jsonObject.results[i].Last_name + '</td>';
@@ -220,7 +223,7 @@ function searchContact()
 						contactList += '<td>';
 						contactList += '<div class="contactOptions">';
 						contactList +='<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#editorModal"><i class="fas fa-edit"></i></button>';
-						contactList +='<button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>';
+						contactList +='<button type="button" class="btn btn-danger" onclick="deleteContact('+id+');"><i class="fas fa-trash"></i></button>';
 						contactList += '</div>';
 						contactList += '</td>';
 						contactList += '</tr>';
@@ -282,35 +285,43 @@ function editContact()
 }
 
 // This function cant be used yet
-function deleteContact()
-{	
-  	readCookie();
-  
-	var tmp = {ID:userId};
-	var jsonPayload = JSON.stringify( tmp );
+function deleteContact(x)
+{
+  readCookie();
 
- 	 document.getElementById("deleteContact").innerHTML = "";
-
-	var url = urlBase + '/DeleteContact.' + extension;
-	
-	var xhr = new XMLHttpRequest();
-	xhr.open("POST", url, true);
-	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-	try
+	if (confirm("Are you sure you want to delete this contact?"))
 	{
-		xhr.onreadystatechange = function() 
+		var tmp = {ID:x};
+		var jsonPayload = JSON.stringify( tmp );
+
+	 //	 document.getElementById("deleteContact").innerHTML = "";
+
+		var url = urlBase + '/DeleteContact.' + extension;
+
+		var xhr = new XMLHttpRequest();
+		xhr.open("POST", url, true);
+		xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+		try
 		{
-			if (this.readyState == 4 && this.status == 200) 
+			xhr.onreadystatechange = function()
 			{
-				// This id does not exit yet
-				document.getElementById("deleteContactResult").innerHTML = "Contact deleted!";
-			}
-		};
-		xhr.send(jsonPayload);
+				if (this.readyState == 4 && this.status == 200)
+				{
+					// This id does not exit yet
+					//document.getElementById("deleteContactResult").innerHTML = "Contact deleted!";
+				}
+			};
+			xhr.send(jsonPayload);
+		}
+		catch(err)
+		{
+			document.getElementById("contactEditResult").innerHTML = "Could not delete";
+		}
 	}
-	catch(err)
+	else
 	{
-		document.getElementById("deleteContactResult").innerHTML = "Could not delete";
+  	window.location.href = "contacts.html";
 	}
 }
+
 
