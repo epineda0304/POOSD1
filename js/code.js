@@ -259,7 +259,7 @@ function editContact()
 {	
 	readCookie();
 	
-	var id = document.getElementById("contactID").value;
+	//var id = document.getElementById("contactID").value;
 	var fName = document.getElementById("editFirst").value;
 	var lName = document.getElementById("editLast").value;
 	var uEmail = document.getElementById("editEmail").value;
