@@ -223,10 +223,10 @@ function searchContact()
 						saveCookie();
 						
 						contactList += '<tr>';
-						contactList += '<td>' + '<div contenteditable>' + jsonObject.results[i].First_name + '</div>' + '</td>';
-						contactList += '<td>' + '<div contenteditable>' + jsonObject.results[i].Last_name  + '</div>'+ '</td>';
-						contactList += '<td>' + '<div contenteditable>'+ jsonObject.results[i].Email + '</div>' + '</td>';
-						contactList += '<td>' + '<div contenteditable>'+ jsonObject.results[i].Phone_num + '</div>'+ '</td>';
+						contactList += '<td>' + '<div contenteditable id="editFirst">' + jsonObject.results[i].First_name + '</div>' + '</td>';
+						contactList += '<td>' + '<div contenteditable id="editLast">' + jsonObject.results[i].Last_name  + '</div>'+ '</td>';
+						contactList += '<td>' + '<div contenteditable id="editEmail">'+ jsonObject.results[i].Email + '</div>' + '</td>';
+						contactList += '<td>' + '<div contenteditable id="editPhoneNumber">'+ jsonObject.results[i].Phone_num + '</div>'+ '</td>';
 						
 						contactList += '<td>';
 						contactList += '<div class="contactOptions">';
