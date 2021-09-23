@@ -6,6 +6,7 @@ body {
   overflow: auto;
   background-size: cover;
   background-image: url("../images/sky2.jpg");
+  background-repeat: no-repeat;
 }
 
 h1 {
