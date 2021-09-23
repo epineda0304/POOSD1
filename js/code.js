@@ -255,11 +255,11 @@ function searchContact()
 }
 
 
-function editContact(id)
+function editContact(contactId)
 {	
 	readCookie();
 	
-	var id = document.getElementById("contactID").value;
+	var id = contactId;
 	var fName = document.getElementById("editFirst").innerText;
 	var lName = document.getElementById("editLast").innerText;
 	var uEmail = document.getElementById("editEmail").innerText;
