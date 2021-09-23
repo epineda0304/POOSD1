@@ -216,7 +216,6 @@ function searchContact()
 				}	
 				else if(jsonObject.results.length > 0)
 				{
-					var fn,ln,ue,up;
 					for( var i=0; i<jsonObject.results.length; i++ )
 					{
 						id = jsonObject.results[i].ID;
@@ -229,14 +228,9 @@ function searchContact()
 						contactList += '<td>' + '<div contenteditable="true" id="editEmail">'+ jsonObject.results[i].Email + '</div>' + '</td>';
 						contactList += '<td>' + '<div contenteditable="true" id="editPhoneNumber">'+ jsonObject.results[i].Phone_num + '</div>'+ '</td>';
 						
-						fn = document.getElementById("editFirst").innerText;
-						ln = document.getElementById("editLast").innerText;
-						ue = document.getElementById("editEmail").innerText;
-						up = document.getElementById("editPhoneNumber").innerText;
-						
 						contactList += '<td>';
 						contactList += '<div class="contactOptions">';
-						contactList +='<button type="button" class="btn btn-success" onclick="editContact('+id+fn+ln+ue+up+');"><i class="fas fa-edit"></i> </button>';
+						contactList +='<button type="button" class="btn btn-success" onclick="editContact('+id+');"><i class="fas fa-edit"></i> </button>';
 						contactList +='<button type="button" class="btn btn-danger" onclick="deleteContact('+id+');"><i class="fas fa-trash"></i></button>';
 						contactList += '</div>';
 						contactList += '</td>';
@@ -261,19 +255,15 @@ function searchContact()
 }
 
 
-function editContact(id, fn, ln, ue, up)
+function editContact(id)
 {	
 	readCookie();
 	
-	//var id = document.getElementById("contactID").value;
-	//var fName = document.getElementById("editFirst").innerText;
-	//var lName = document.getElementById("editLast").innerText;
-	//var uEmail = document.getElementById("editEmail").innerText;
-	//var uPhone = document.getElementById("editPhoneNumber").innerText;
-	var fName = fn;
-	var lName = ln;
-	var uEmail = ue;
-	var uPhone = up;
+	var id = document.getElementById("contactID").value;
+	var fName = document.getElementById("editFirst").innerText;
+	var lName = document.getElementById("editLast").innerText;
+	var uEmail = document.getElementById("editEmail").innerText;
+	var uPhone = document.getElementById("editPhoneNumber").innerText;
 
 	document.getElementById("contactEditResult").innerHTML = "";
 
