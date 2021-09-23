@@ -267,7 +267,7 @@ function editContact(id)
 
 	document.getElementById("contactEditResult").innerHTML = "";
 
-	var tmp = {First_name:fName, Last_name:lName , email:uEmail, Phone_num:uPhone, ID:id};
+	var tmp = {First_name:fName, Last_name:lName , email:uEmail, Phone_num:uPhone, ID:id, User_ID:userId};
 	var jsonPayload = JSON.stringify( tmp );
 
 	var url = urlBase + '/EditContact.' + extension;
