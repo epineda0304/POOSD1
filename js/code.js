@@ -224,13 +224,13 @@ function searchContact()
 						
 						contactList += '<tr>';
 						contactList += '<td>' + '<div contenteditable>' + jsonObject.results[i].First_name + '</div>' + '</td>';
-						contactList += '<td>' + jsonObject.results[i].Last_name + '</td>';
-						contactList += '<td>' + jsonObject.results[i].Email + '</td>';
-						contactList += '<td>' + jsonObject.results[i].Phone_num + '</td>';
+						contactList += '<td>' + '<div contenteditable>' + jsonObject.results[i].Last_name  + '</div>'+ '</td>';
+						contactList += '<td>' + '<div contenteditable>'+ jsonObject.results[i].Email + '</div>' + '</td>';
+						contactList += '<td>' + '<div contenteditable>'+ jsonObject.results[i].Phone_num + '</div>'+ '</td>';
 						
 						contactList += '<td>';
 						contactList += '<div class="contactOptions">';
-						contactList +='<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#editorModal" onclick="showContact('+id+');"><i class="fas fa-edit"></i> </button>';
+						contactList +='<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#editorModal" onclick="editContact('+id+');"><i class="fas fa-edit"></i> </button>';
 						contactList +='<button type="button" class="btn btn-danger" onclick="deleteContact('+id+');"><i class="fas fa-trash"></i></button>';
 						contactList += '</div>';
 						contactList += '</td>';
@@ -255,7 +255,7 @@ function searchContact()
 }
 
 
-function editContact()
+function editContact(id)
 {	
 	readCookie();
 	
