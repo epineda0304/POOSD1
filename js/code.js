@@ -267,6 +267,8 @@ function editContact(contactId)
 
 	document.getElementById("contactEditResult").innerHTML = "";
 
+	console.log(table.row(1));
+
 	var tmp = {First_name:fName, Last_name:lName , email:uEmail, Phone_num:uPhone, ID:id, User_ID:userId};
 	var jsonPayload = JSON.stringify( tmp );
 
@@ -333,17 +335,6 @@ function deleteContact(x)
 	}
 }
 
-function showContact(numID)
-{
-	var first = "";
-	var last = "";
-	var email = "";
-	var phone = "";
-
-	document.getElementById("editFirst").innerHTML = "ProofItWorks";
-	document.getElementById("contactID").innerHTML = numID;
-
-}
 
 function mySearchFunction() 
 {
