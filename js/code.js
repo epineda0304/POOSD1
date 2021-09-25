@@ -223,14 +223,14 @@ function searchContact()
 						saveCookie();
 						
 						contactList += '<tr>';
-						contactList += '<td>' + '<div contenteditable="true" id="editFirst">' + jsonObject.results[i].First_name + '</div>' + '</td>';
-						contactList += '<td>' + '<div contenteditable="true" id="editLast">' + jsonObject.results[i].Last_name  + '</div>'+ '</td>';
-						contactList += '<td>' + '<div contenteditable="true" id="editEmail">'+ jsonObject.results[i].Email + '</div>' + '</td>';
-						contactList += '<td>' + '<div contenteditable="true" id="editPhoneNumber">'+ jsonObject.results[i].Phone_num + '</div>'+ '</td>';
+						contactList += '<td>' + '<div contenteditable="true" id="editFirst'+i+'">' + jsonObject.results[i].First_name + '</div>' + '</td>';
+						contactList += '<td>' + '<div contenteditable="true" id="editLast'+i+'">' + jsonObject.results[i].Last_name  + '</div>'+ '</td>';
+						contactList += '<td>' + '<div contenteditable="true" id="editEmail'+i+'">'+ jsonObject.results[i].Email + '</div>' + '</td>';
+						contactList += '<td>' + '<div contenteditable="true" id="editPhoneNumber'+i+'">'+ jsonObject.results[i].Phone_num + '</div>'+ '</td>';
 						
 						contactList += '<td>';
 						contactList += '<div class="contactOptions">';
-						contactList +='<button type="button" class="btn btn-success" onclick="editContact('+id+');"><i class="fas fa-edit"></i> </button>';
+						contactList +='<button type="button" class="btn btn-success" onclick="editContact('+id+','+i+');"><i class="fas fa-edit"></i> </button>';
 						contactList +='<button type="button" class="btn btn-danger" onclick="deleteContact('+id+');"><i class="fas fa-trash"></i></button>';
 						contactList += '</div>';
 						contactList += '</td>';
@@ -255,19 +255,18 @@ function searchContact()
 }
 
 
-function editContact(contactId)
+function editContact(contactId, row)
 {	
 	readCookie();
 	
+	var contactRow = row;
 	var id = contactId;
-	var fName = document.getElementById("editFirst").innerText;
-	var lName = document.getElementById("editLast").innerText;
-	var uEmail = document.getElementById("editEmail").innerText;
-	var uPhone = document.getElementById("editPhoneNumber").innerText;
+	var fName = document.getElementById("editFirst"+contactRow).innerText;
+	var lName = document.getElementById("editLast"+contactRow).innerText;
+	var uEmail = document.getElementById("editEmail"+contactRow).innerText;
+	var uPhone = document.getElementById("editPhoneNumber"+contactRow).innerText;
 
 	document.getElementById("contactEditResult").innerHTML = "";
-
-	console.log(table.row(1));
 
 	var tmp = {First_name:fName, Last_name:lName , email:uEmail, Phone_num:uPhone, ID:id, User_ID:userId};
 	var jsonPayload = JSON.stringify( tmp );
