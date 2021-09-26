@@ -267,7 +267,7 @@ function editContact(contactId, row)
 	var uEmail = document.getElementById("editEmail"+contactRow).innerText;
 	var uPhone = document.getElementById("editPhoneNumber"+contactRow).innerText;
 
-	document.getElementById("contactEditResult").innerHTML = "";
+	//document.getElementById("contactEditResult").innerHTML = "";
 
 	var tmp = {First_name:fName, Last_name:lName , email:uEmail, Phone_num:uPhone, ID:id, User_ID:userId};
 	var jsonPayload = JSON.stringify( tmp );
@@ -283,7 +283,7 @@ function editContact(contactId, row)
 		{
 			if (this.readyState == 4 && this.status == 200) 
 			{
-				document.getElementById("contactEditResult").innerHTML = "Contact has been edited.";
+				//document.getElementById("contactEditResult").innerHTML = "Contact has been edited.";
 			}
 		};
 		xhr.send(jsonPayload);
