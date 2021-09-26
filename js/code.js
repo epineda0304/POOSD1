@@ -294,17 +294,15 @@ function editContact(contactId, row)
 	
 }
 
-// This function cant be used yet
-function deleteContact(x)
+
+function deleteContact(contactId)
 {
   readCookie();
 
 	if (confirm("Are you sure you want to delete this contact?"))
 	{
-		var tmp = {ID:x};
+		var tmp = {ID:contactId};
 		var jsonPayload = JSON.stringify( tmp );
-
-	 //	 document.getElementById("deleteContact").innerHTML = "";
 
 		var url = urlBase + '/DeleteContact.' + extension;
 
@@ -317,8 +315,8 @@ function deleteContact(x)
 			{
 				if (this.readyState == 4 && this.status == 200)
 				{
-					// This id does not exit yet
-					//document.getElementById("deleteContactResult").innerHTML = "Contact deleted!";
+					// Refresh contacts
+					mySearchFunction();
 				}
 			};
 			xhr.send(jsonPayload);
@@ -356,4 +354,29 @@ function mySearchFunction()
       }
     } 
   }
+}
+
+// Transition
+window.onload = () => {
+		const transition_el = document.querySelector('.transition');
+		const anchors = document.querySelectorAll('a');
+		
+	setTimeout(() => {
+			transition_el.classList.remove('is-active');
+	}, 150);
+
+	for(let i = 0; i < anchors.length; i++){
+		const anchor = anchors[i];
+
+		anchor.addEventListener('click', e => {
+			e.preventDefault();
+			let target = e.target.href;
+
+			transition_el.classList.add('is-active');
+
+			setTimeout(() => {
+					window.location.href = target;
+			}, 150);
+		});
+	}
 }
