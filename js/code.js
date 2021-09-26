@@ -317,6 +317,9 @@ function deleteContact(contactId)
 				{
 			
 				}
+
+				// Refresh contacts
+				mySearchFunction();
 			};
 			xhr.send(jsonPayload);
 		}
@@ -330,8 +333,7 @@ function deleteContact(contactId)
   	window.location.href = "contacts.html";
 	}
 
-	// Refresh contacts
-	mySearchFunction();
+	
 }
 
 
