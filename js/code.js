@@ -315,8 +315,7 @@ function deleteContact(contactId)
 			{
 				if (this.readyState == 4 && this.status == 200)
 				{
-					// Refresh contacts
-					mySearchFunction();
+			
 				}
 			};
 			xhr.send(jsonPayload);
@@ -330,6 +329,9 @@ function deleteContact(contactId)
 	{
   	window.location.href = "contacts.html";
 	}
+
+	// Refresh contacts
+	mySearchFunction();
 }
 
 
