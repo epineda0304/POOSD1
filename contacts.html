@@ -26,7 +26,10 @@
 
   
 </head>
-<body>
+<body data-vide-bg="../images/sky6">
+
+  <div class="transition transition-1 is-active"></div>
+
   <div class="form-contacts">
       <div class="titleBar">
         <button type="button" id="logoutButton" class="btn btn-danger" onclick="doLogout();"><i class="fas fa-sign-out-alt"></i><small> Log Out</small></button>
@@ -52,7 +55,7 @@
               <!-- Button trigger modal -->
               <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 <i class="fas fa-plus"></i> Add New Contact</i></button>
-             <button type="button" onclick="searchContact();" class="btn btn-primary"> Show Contact(s) </button>
+             <button type="button" onclick="searchContact();" class="btn btn-primary"><i class="far fa-id-card"></i> Show Contacts </button>
             
 
               <!-- Modal -->
@@ -88,7 +91,7 @@
                           </div>
                       </div>
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" onclick="addContact();">Save</button>
+                        <button type="button" class="btn btn-primary" onclick="addContact();" data-bs-dismiss="modal">Save</button>
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                       </div>
                     </form>
@@ -119,5 +122,7 @@
       </table>
   
   </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="jquery.vide.js"></script>
 </body>
 </html>
