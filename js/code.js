@@ -175,10 +175,10 @@ function addContact()
 			if (this.readyState == 4 && this.status == 200) 
 			{
 				document.getElementById("contactAddResult").innerHTML = "Contact has been added";
-				window.location.href = "contacts.html";
 			}
 		};
 		xhr.send(jsonPayload);
+		window.location.href = "contacts.html";
 	}
 	catch(err)
 	{
