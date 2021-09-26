@@ -178,7 +178,6 @@ function addContact()
 			}
 		};
 		xhr.send(jsonPayload);
-		window.location.href = "contacts.html";
 	}
 	catch(err)
 	{
