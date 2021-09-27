@@ -315,7 +315,7 @@ function deleteContact(contactId)
 			{
 				if (this.readyState == 4 && this.status == 200)
 				{
-					window.location.href = "contacts.html";
+					searchContact();
 				}
 			};
 			xhr.send(jsonPayload);
